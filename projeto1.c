@@ -5,7 +5,8 @@
  * Integrantes do grupo:
  *   Mihael Rommel b. Xavier     / RA: 10239617
  *   Gian Lucca Campanha Ribeiro / RA: 10438361
- *
+ *   Victor Reis da Silva        / RA: 10420297
+ *   KAUA VICTOR OLIVEIRA DE SOUSA / RA: 10444362
  */
 
 #include <stdio.h>
@@ -167,7 +168,10 @@ int main(void)
     char w6[] = "-0,34";
     char w7[] = "05,567";
     char w8[] = "$5.567,78";
-    char w9[] = "-2.1";
+    /*Obs: Possível erro na documentação do projeto.
+    Entao considerei que 2.1 e -2.1 é erro no documento do projeto
+    o ponto flutuante eh exclusivamente com virgula*/
+    char w9[] = "-2.1"; // 
 
     imprime(w1, scanner(w1));
     imprime(w2, scanner(w2));
