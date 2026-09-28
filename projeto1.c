@@ -53,7 +53,7 @@ q5:
     return ERRO;
 
 q6:
-    /* Apos "-0,", so aceita de 1 a 9, proibindo "-0,0" */
+    /* Apos "-0,", so aceita de caso exista um valor 1 a 9 mesmo seguido de zeros, proibindo "-0,0" */
     if (*p == '0') { p++; goto q6; }
     if (*p >= '1' && *p <= '9') { p++; goto q4; }
     return ERRO;
