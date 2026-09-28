@@ -54,6 +54,7 @@ q5:
 
 q6:
     /* Apos "-0,", so aceita de 1 a 9, proibindo "-0,0" */
+    if (*p == '0') { p++; goto q6; }
     if (*p >= '1' && *p <= '9') { p++; goto q4; }
     return ERRO;
 
@@ -78,7 +79,8 @@ q10:
     return ERRO;
 
 q11:
-    /* Apos "0,", so aceita de 1 a 9, proibindo "0,0" */
+    /* Apos "0,", so aceita de 1 a 9, proibindo "0,0", mas aceita valores como "0,05" */
+    if (*p == '0') { p++; goto q11; }
     if (*p >= '1' && *p <= '9') { p++; goto q9; }
     return ERRO;
 
@@ -171,7 +173,7 @@ int main(void)
     /*Obs: Possível erro na documentação do projeto.
     Entao considerei que 2.1 e -2.1 é erro no documento do projeto
     o ponto flutuante eh exclusivamente com virgula*/
-    char w9[] = "-2.1"; // 
+    char w9[] = "-2.1";
 
     imprime(w1, scanner(w1));
     imprime(w2, scanner(w2));
